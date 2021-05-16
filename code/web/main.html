@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chat-room-gui</title>
+    <meta charset="utf-8">
+
+    <script src="/eel.js"></script>
+	<script src="./main.js"></script>
+</head>
+
+<body bgcolor="#CCCCCC" alink="#FFFFFF">
+	
+	<span style="font-family:sans-serif;">
+    <h2>chat room gui</h2>
+	server ip:
+	<input type="text" id="ip_input" value="192.168.31.176" style="width:140px;"/></input>
+	<br>
+	server port:
+	<input type="text" id="port_input" value="8000" style="width:40px;"/></input>
+	<br>
+	<input type="button" id="btn" value="connect" onclick="connect()"  style="width:60px;height:20px;font-size:10px;" />
+	<br>
+	<textarea id="story"   rows="10" cols="75" >Wellcome to the chatroom.&#13;&#10;</textarea>
+    
+	</span>
+</body>
+
+</html>
