@@ -1,6 +1,7 @@
 import socket
 import threading
 import eel
+import time
 
 #ip =input("please input server ip address")
 #ip="192.168.31.176"
@@ -13,21 +14,43 @@ eel.init("web")
 def send():
     while(1):
         message=input("input:")
+        while(len(message)==0):
+            message=input("input:")
         client.sendall(message.encode())
+        if("quit()" in message):
+            break
+        
+
+def recv():
+    while(1):
         echo=str(client.recv(1024), encoding='utf-8')
         eel.show_story(echo+"\n")
         print(echo)
         if("quit()" in echo):
             break
-    print("this thread ended")
-    client.close()
     
+    
+        
 @eel.expose
 def connect(ip,port):
-    port=int(port)
     global client
+    port=int(port)
     client.connect((ip,port))
-    send()
+    
+    send_thread=threading.Thread(target=send)
+    recv_thread=threading.Thread(target=recv,)
+    
+    send_thread.start()
+    recv_thread.start()
+    
+    
+    send_thread.join()
+    recv_thread.join()
+    
+    print("io thread both ended")
+    client.close()
+    eel.quit()
+    
 
 
 
