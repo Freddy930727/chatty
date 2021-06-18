@@ -1,1 +1,2 @@
-this repository is made for innoserve competition
+A simple chat room program with gui.
+It's suspended currently.

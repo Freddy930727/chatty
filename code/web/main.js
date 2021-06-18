@@ -1,8 +1,11 @@
 
 function connect(){
-	eel.connect(document.getElementById("ip_input").value,document.getElementById("port_input").value);
+	eel.connection(document.getElementById("ip_input").value,document.getElementById("port_input").value);
 }
 
+function sendmessage(){
+	eel.send(document.getElementById("input_box").value);
+}
 
 eel.expose(quit);
 function quit(){
@@ -14,5 +17,4 @@ function show_story(content){
 	var story=document.getElementById("story");
 	story.scrollTop=story.scrollHeight;
 	story.value+=content;
-		
 }

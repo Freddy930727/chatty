@@ -3,27 +3,55 @@
 <head>
     <title>chat-room-gui</title>
     <meta charset="utf-8">
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
     <script src="/eel.js"></script>
-	<script src="./main.js"></script>
+	  <script src="./main.js"></script>
 </head>
 
-<body bgcolor="#CCCCCC" alink="#FFFFFF">
-	
-	<span style="font-family:sans-serif;">
-    <h2>chat room gui</h2>
+
+<body>
+
+  <h2>chat room gui</h2>
 	server ip:
-	<input type="text" id="ip_input" value="192.168.31.176" style="width:140px;"/></input>
+	<input type="text" id="ip_input" value="192.168.31.167" style="width:140px;"/></input>
 	<br>
 	server port:
 	<input type="text" id="port_input" value="8000" style="width:40px;"/></input>
 	<br>
-	<input type="button" id="btn" value="connect" onclick="connect()"  style="width:60px;height:20px;font-size:10px;" />
-
+	<input id="btn" value="connect" onclick="connect()" type="submit" class="btn btn-primary"/>
 	<br>
-	<textarea id="story"   rows="10" cols="75" >Wellcome to the chatroom.&#13;&#10;</textarea>
-    
-	</span>
+	<textarea id="story" ></textarea>
+  <input id="input_box" value="" placeholder="please input here">
+  <input id="sendmessagebtn" value="send" onclick="sendmessage()" type="submit" class="btn btn-primary"/>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+
 </body>
 
 </html>
